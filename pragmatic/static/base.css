@@ -1,6 +1,9 @@
 body{
     font-family: NanumSquareR;
 }
+a{
+    text-decoration: none;
+}
 .pragmatic_footer_logo{
     font-family: 'Lobster', cursive;
 }
@@ -12,7 +15,7 @@ body{
 }
 
 .pragmatic_footer_button{
-    font-size: .9rem;
+    font-size: .8rem;
 }
 
 .pragmatic_header{
