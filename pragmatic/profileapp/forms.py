@@ -7,4 +7,4 @@ class ProfileCreationForm(ModelForm):
     class Meta:
         model = Profile
         # user는 서버에서 처리.
-        fields = ['image', 'nickname'ㅇ, 'message']
+        fields = ['image', 'nickname', 'message']
