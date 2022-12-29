@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import CreateView, DetailView
 
+from .forms import AccountUpdateForm
 from .models import HelloWorld
 from django.urls import reverse, reverse_lazy
 
@@ -28,12 +29,22 @@ def hello_world(request):
     else:
         hello_world_list = HelloWorld.objects.all()
         return render(request, 'accountapp/helloworld.html', context={'text': 'No DATA!!!', 'hello_world_list' : hello_world_list})
+
+
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
+    context_object_name = 'target_user'
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
 class AccountDetailView(DetailView):
     model = User
+    context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
+
+class AccountUpdateView(CreateView):
+    model = User
+    form_class = AccountUpdateForm
+    success_url = reverse_lazy('accountapp:hello_world')
+    template_name = 'accountapp/update.html'

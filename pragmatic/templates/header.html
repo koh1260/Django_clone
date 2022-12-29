@@ -1,8 +1,9 @@
 <div class="pragmatic_header">
     <div>
-        <a href="{% url 'accountapp:hello_world' %}">
-            <h1 class="pragmatic_header_logo">Pramatic</h1>
-        </a>
+        <h1 class="pragmatic_header_logo">Pramatic</h1>
+<!--        <a href="{% url 'accountapp:hello_world' %}">-->
+<!--            <h1 class="pragmatic_header_logo">Pramatic</h1>-->
+<!--        </a>-->
     </div>
     <div>
         <span>nav1</span>
@@ -14,7 +15,7 @@
             <span>Login</span>
         </a>
         {% else %}
-        <a href="{% url 'accountapp:detail' pk=user.pk" %}>
+        <a href="{% url 'accountapp:detail' pk=user.pk %}">
             <span>My Page</span>
         </a>
         <a href="{% url 'accountapp:logout' %}?next={{request.path}}">
