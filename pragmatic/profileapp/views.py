@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 
 from .forms import ProfileCreationForm
 from .models import Profile
@@ -27,3 +27,11 @@ class ProfileCreateView(CreateView):
 
         # 기존 함수
         return super().form_valid(form)
+
+class ProfileUpdateView(UpdateView):
+    model = Profile
+    context_object_name = 'target_profile'
+    form_class = ProfileCreationForm
+    success_url = reverse_lazy('accountapp:hello_world')
+    template_name = 'profileapp/update.html'
+
