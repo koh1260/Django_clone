@@ -7,10 +7,12 @@
     <div>
         <span>nav1</span>
         <span>nav2</span>
-        <span>nav3</span>
+        <a href="{% url 'articleapp:list' %}">
+            <span>Articles</span>
+        </a>
         {% if not user.is_authenticated %}
         <!--    GET 방식으로 next path 전달    -->
-        <a href="{% url 'accountapp:login' %}?next={{request.path}}">
+        <a href="{% url 'accountapp:login' %}">
             <span>Login</span>
         </a>
 

@@ -3,6 +3,7 @@ body{
 }
 a{
     text-decoration: none;
+    color: black;
 }
 .pragmatic_footer_logo{
     font-family: 'Lobster', cursive;

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="text-align: center">
+    <div>
+        <h4>삭제</h4>
+    </div>
+    <div>
+        <form action="{% url 'articleapp:delete' pk=target_article.pk %}" method='post'>
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger rounded-pill col-3 mt-3 mb-3">
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
