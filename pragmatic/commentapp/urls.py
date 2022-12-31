@@ -18,10 +18,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from commentapp.views import CommentCreateView
+
+app_name = 'commentapp'
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accountapp.urls')),
-    path('profiles/', include('profileapp.urls')),
-    path('articles/', include('articleapp.urls')),
-    path('comment/', include('commentapp.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('create/', CommentCreateView.as_view(), name = 'create'),
+]
